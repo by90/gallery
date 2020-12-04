@@ -39,35 +39,11 @@ class RouteConfiguration {
   /// take priority.
   static List<Path> paths = [
     Path(
-      r'^' + DemoPage.baseRoute + r'/([\w-]+)$',
-      (context, match) => DemoPage(slug: match),
-    ),
-    Path(
-      r'^' + RallyApp.homeRoute,
-      (context, match) => const StudyWrapper(study: RallyApp()),
-    ),
-    Path(
-      r'^' + ShrineApp.homeRoute,
-      (context, match) => const StudyWrapper(study: ShrineApp()),
-    ),
-    Path(
-      r'^' + CraneApp.defaultRoute,
-      (context, match) => const StudyWrapper(study: CraneApp()),
-    ),
-    Path(
-      r'^' + FortnightlyApp.defaultRoute,
-      (context, match) => const StudyWrapper(study: FortnightlyApp()),
-    ),
-    Path(
       r'^' + ReplyApp.homeRoute,
       (context, match) => const StudyWrapper(
         alignment: AlignmentDirectional.topCenter,
         study: ReplyApp(),
       ),
-    ),
-    Path(
-      r'^' + StarterApp.defaultRoute,
-      (context, match) => const StudyWrapper(study: StarterApp()),
     ),
     Path(
       r'^/',

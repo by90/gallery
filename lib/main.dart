@@ -15,6 +15,8 @@ import 'package:gallery/pages/backdrop.dart';
 import 'package:gallery/pages/splash.dart';
 import 'package:gallery/themes/gallery_theme_data.dart';
 
+import 'package:gallery/studies/reply/app.dart';
+
 void main() {
   GoogleFonts.config.allowRuntimeFetching = false;
   runApp(const GalleryApp());
@@ -82,9 +84,10 @@ class RootPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const ApplyTextOptions(
-      child: SplashPage(
-        child: Backdrop(),
-      ),
+      // child: SplashPage(
+      //   child: Backdrop(homePage: ReplyApp()),
+      // ),
+      child: Backdrop(homePage: ReplyApp()),
     );
   }
 }
