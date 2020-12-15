@@ -1,14 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:gallery/main.dart';
-import 'package:gallery/pages/demo.dart';
-import 'package:gallery/pages/home.dart';
-import 'package:gallery/studies/crane/app.dart';
-import 'package:gallery/studies/fortnightly/app.dart';
-import 'package:gallery/studies/rally/app.dart';
-import 'package:gallery/studies/reply/app.dart';
-import 'package:gallery/studies/shrine/app.dart';
-import 'package:gallery/studies/starter/app.dart';
 
 typedef PathWidgetBuilder = Widget Function(BuildContext, String);
 
@@ -38,13 +30,6 @@ class RouteConfiguration {
   /// will be returned. This means that the paths higher up in the list will
   /// take priority.
   static List<Path> paths = [
-    Path(
-      r'^' + ReplyApp.homeRoute,
-      (context, match) => const StudyWrapper(
-        alignment: AlignmentDirectional.topCenter,
-        study: ReplyApp(),
-      ),
-    ),
     Path(
       r'^/',
       (context, match) => const RootPage(),

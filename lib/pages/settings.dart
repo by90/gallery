@@ -12,9 +12,33 @@ import 'package:gallery/data/gallery_options.dart';
 import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 import 'package:gallery/layout/adaptive.dart';
 import 'package:gallery/pages/about.dart' as about;
-import 'package:gallery/pages/home.dart';
 import 'package:gallery/pages/settings_list_item.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+class Header extends StatelessWidget {
+  const Header({this.color, this.text});
+
+  final Color color;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        top: isDisplayDesktop(context) ? 63 : 15,
+        bottom: isDisplayDesktop(context) ? 21 : 11,
+      ),
+      child: Text(
+        text,
+        style: Theme.of(context).textTheme.headline4.apply(
+              color: color,
+              fontSizeDelta:
+                  isDisplayDesktop(context) ? desktopDisplay1FontDelta : 0,
+            ),
+      ),
+    );
+  }
+}
 
 enum _ExpandableSetting {
   textScale,
@@ -268,6 +292,7 @@ class _SettingsPageState extends State<SettingsPage> {
             children: [
               if (isDesktop)
                 const SizedBox(height: firstHeaderDesktopTopPadding),
+              //将Header拷贝过来
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 32),
                 child: ExcludeSemantics(
